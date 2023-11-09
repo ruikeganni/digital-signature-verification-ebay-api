@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ebay.signaturevalidation.mapper.UpdateDataMapper">
+
+    <resultMap id="dataMap" type="com.ebay.signaturevalidation.po.UpdateData">
+        <id property="id" column="id" />
+        <result property="recId" column="rec_id"/>
+        <result property="type" column="type" />
+        <result property="field" column="field"/>
+        <result property="value" column="value"/>
+    </resultMap>
+
+    <sql id="FIELDS">
+        id, rec_id, `type`, field, `value`
+    </sql>
+
+    <select id="findAll" resultMap="dataMap">
+        SELECT
+        <include refid="FIELDS" />
+        FROM update_data
+    </select>
+</mapper>
