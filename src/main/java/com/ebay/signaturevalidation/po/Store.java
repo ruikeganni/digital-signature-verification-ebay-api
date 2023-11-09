@@ -20,4 +20,6 @@ public class Store {
 
     private String clientSecret;
 
+    private String isinactive;
+
 }
